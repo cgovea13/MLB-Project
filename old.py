@@ -2,18 +2,34 @@ import requests, json, sys, pyodbc
 
 
 #Fetch data from MLB Stats API
-url = 'https://statsapi.mlb.com/api/v1/sports/1/players'
+url = 'https://statsapi.mlb.com/api/v1/people/660271/stats?stats=career&group=hitting'
 response = requests.get(url)
 data = response.json()
 
+stats = data['stats'][0]['splits'][0]['stat']
+print(json.dump(stats, indent = 4))
+# print('\n')
+# stat_values = stats[0]['stat']
+# print(stat_values)
+# print(stat_values['gamesPlayed'])
 
-#teams = data.get('people', [])
 
 
 
+
+
+# url = 'https://statsapi.mlb.com/api/v1/teams'
+# response = requests.get(url)
+# data = response.json()
+
+# people = data.get('teams', [])
+
+
+# for person in people:
+#     print(person)
 #write to json file
-with open('mlb_teams.json', 'w') as file:
-    json.dump(data, file, indent=4)
+# with open('mlb_teams.json', 'w') as file:
+#     json.dump(data, file, indent=4)
 
 
 # SQL Server connection
