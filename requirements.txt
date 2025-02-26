@@ -1,0 +1,45 @@
+Project: MLB Player & Team Performance Dashboard
+Goal:
+Create a Power BI dashboard that visualizes MLB player and team performance metrics, using Python for data extraction and transformation, and SSMS (SQL Server) for storing and querying the data.
+________________________________________
+Project Steps
+1. Data Collection (Python)
+•	Use Python to pull data from the MLB Stats API (Link to API Docs).
+•	Extract data such as:
+o	Player stats (batting average, home runs, RBIs, etc.).
+o	Team stats (wins, losses, ERA, etc.).
+o	Game results (score, highlights, etc.).
+o	Historical comparisons (optional).
+•	Store the data in a structured format (CSV or JSON initially).
+________________________________________
+2. Data Storage (SQL Server - SSMS)
+•	Set up a SQL Server database in SSMS to store the data.
+•	Create tables for:
+o	Players (id, name, team_id, position, stats, etc.)
+o	Teams (id, name, division, wins, losses, etc.)
+o	Games (id, date, team_1, team_2, score, etc.)
+•	Use Python (pandas & pyodbc/sqlalchemy) to insert/update the data in SQL Server.
+________________________________________
+3. Data Transformation (Python & SQL)
+•	Clean and normalize the data.
+•	Create SQL stored procedures for aggregating data (e.g., top 10 home run hitters).
+•	Use Python for data wrangling (merging tables, handling missing values).
+________________________________________
+4. Visualization (Power BI)
+•	Connect Power BI to SQL Server.
+•	Create interactive visuals:
+o	Player leaderboards (HR, AVG, RBI, ERA, etc.).
+o	Team standings.
+o	Game results trends.
+o	Historical performance comparisons.
+________________________________________
+Tech Stack
+•	Python: requests, pandas, pyodbc/sqlalchemy, matplotlib/seaborn (for testing).
+•	SQL Server (SSMS): Store and query structured data.
+•	Power BI: Interactive visualization.
+________________________________________
+Bonus Enhancements
+•	Add real-time updates with scheduled scripts.
+•	Implement predictive analytics (e.g., predicting a player’s home run count).
+•	Use DAX in Power BI for calculated fields.
+

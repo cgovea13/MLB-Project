@@ -1,0 +1,22 @@
+Team & Player Information
+    /teams
+    /teams/{teamId}
+    /teams/{teamId}/roster
+    /people/{playerId}
+    /people/{playerId}/stats
+Game & Schedule Data
+    /schedule
+    /game/{gamePk}/boxscore
+    /game/{gamePk}/playByPlay
+    /game/{gamePk}/linescore
+Standings & Rankings
+    /standings
+    /stats/leaders
+Stats & Historical Data
+    /stats
+    /stats/leaders
+    /stats/streaks
+Miscellaneous
+    /venues
+    /draft/prospects
+    /attendance
