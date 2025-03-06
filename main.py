@@ -1,6 +1,5 @@
 import requests, json, sys, pyodbc
 
-
 class APIConnection:
     def __init__(self, obj, input, sql_conn):
         #Fetch data from MLB Stats API
@@ -19,8 +18,7 @@ class APIConnection:
             self.obj.insertTeams(self.sql_conn, self.json_data)
         elif self.input == 'player':
             self.obj.insertPlayers(self.sql_conn, self.json_data)
-        
-        
+              
 class Team:
     def __init__(self):
         self.endpoint = 'teams'
@@ -198,14 +196,17 @@ class SQLConnection:
 
 if __name__ == '__main__':
 
-    #update_table = input('Enter Player or Team\n').strip().lower()
-    update_table = 'player'
+    update_table = input('Enter Player or Team\n').strip().lower()
+    #update_table = 'player'
     sql_conn = SQLConnection()
-    #team = Team()
-    player = Player()
-    api = APIConnection(player, update_table, sql_conn)
+    if update_table == 'team':
+        obj = Team()
+    elif update_table == 'player':
+        obj = Team()
+
+    api = APIConnection(obj, update_table, sql_conn)
     api.insert()
-    player.insertHittingStats()
+    #player.insertHittingStats()
     
 
 
